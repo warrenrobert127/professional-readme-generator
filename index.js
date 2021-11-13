@@ -42,13 +42,29 @@ function userInput() {
         },
         {
             type:"input",
-            message:"Enter Project Tests ?",
-            name:"tests"
-        },
-        {
-            type:"input",
             message:"Enter Project Questions?",
             name:"questions"
         },
-    ])
+    ]).then(({project,description,installation,testing,usage,license,contributors,questions,requirements}) =>{
+        var READMETEXT = `
+# Project Title: ${project}
+### Description: ${description}
+
+#### Table of Contents
+------------------------
+* [Installation](#installation)
+* [Description] (#description)
+* [Requirements] (#requirements)
+* [Usage] (#usage)
+* [License] (#license)
+* [Contributors] (*contributors)
+* [Questions] (#questions)
+
+// make number of comments same order as above
+##### Installation
+${installation}
+
+
+        `
+    })
 }
